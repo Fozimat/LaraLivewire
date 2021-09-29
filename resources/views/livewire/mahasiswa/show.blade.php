@@ -1,7 +1,33 @@
 @section('title', 'Halaman Mahasiswa')
 
-@section('slot')
 <div class="container">
-    <h1>Ini halaman mahasiswa</h1>
+    <h1 class="mt-3 text-center">Halaman mahasiswa</h1>
+    <a href="#" class="btn btn-primary">Tambah mahasiswa</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama</th>
+                <th scope="col">NIM</th>
+                <th scope="col">No Hp</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($students as $student)
+            <tr>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $student->nama }}</td>
+                <td>{{ $student->nim }}</td>
+                <td>{{ $student->no_hp }}</td>
+                <td>{{ $student->alamat }}</td>
+                <td><a href="#" class="btn btn-success">Edit</a> |
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    {{ $students->links() }}
 </div>
-@endsection

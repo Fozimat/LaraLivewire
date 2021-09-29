@@ -16,7 +16,9 @@
 @include('layouts.navbar')
 
 <body>
-    @yield('slot')
+    <div>
+        {{ $slot }}
+    </div>
 </body>
 
 </html>
