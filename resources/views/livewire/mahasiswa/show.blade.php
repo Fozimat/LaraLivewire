@@ -31,7 +31,7 @@
                 <td>{{ $student->nim }}</td>
                 <td>{{ $student->no_hp }}</td>
                 <td>{{ $student->alamat }}</td>
-                <td><a href="#" class="btn btn-success">Edit</a> |
+                <td><a href="{{ route('mahasiswa.edit', $student->id) }}" class="btn btn-success">Edit</a> |
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
