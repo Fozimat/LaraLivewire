@@ -18,9 +18,14 @@ class Show extends Component
         return view('livewire.mahasiswa.show', compact(['students']));
     }
 
-    public function destroy($id)
+    public function deleteId($id)
     {
-        $student = Student::findOrFail($id);
+        $this->deleteId = $id;
+    }
+
+    public function destroy()
+    {
+        $student = Student::findOrFail($this->deleteId);
         $student->delete();
         return redirect('/mahasiswa')->with('sukses', 'Data berhasil dihapus');
     }
