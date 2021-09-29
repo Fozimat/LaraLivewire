@@ -21,9 +21,12 @@
             </tr>
         </thead>
         <tbody>
+            @php
+            $no = ($students->currentPage() - 1) * $students->perPage() + 1;
+            @endphp
             @foreach ($students as $student)
             <tr>
-                <th scope="row">{{ $loop->iteration }}</th>
+                <th scope="row">{{ $no++ }}</th>
                 <td>{{ $student->nama }}</td>
                 <td>{{ $student->nim }}</td>
                 <td>{{ $student->no_hp }}</td>
