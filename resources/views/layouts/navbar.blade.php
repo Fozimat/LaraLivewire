@@ -8,13 +8,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link {{ request()->is('home') ? 'active' : '' }}" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mahasiswa">Mahasiswa</a>
+                    <a class="nav-link {{ request()->is('mahasiswa*') ? 'active' : '' }}"
+                        href="/mahasiswa">Mahasiswa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tentang">Tentang</a>
+                    <a class="nav-link {{ request()->is('tentang') ? 'active' : '' }}" href="/tentang">Tentang</a>
                 </li>
             </ul>
         </div>
