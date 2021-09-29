@@ -2,7 +2,13 @@
 
 <div class="container">
     <h1 class="mt-3 text-center">Halaman mahasiswa</h1>
-    <a href="#" class="btn btn-primary">Tambah mahasiswa</a>
+    <a href="/mahasiswa/create" class="btn btn-primary mb-3">Tambah mahasiswa</a>
+    @if(session('sukses'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ session('sukses') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <table class="table table-hover">
         <thead>
             <tr>

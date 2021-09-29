@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Home;
+use App\Http\Livewire\Mahasiswa\Create;
 use App\Http\Livewire\Tentang;
 use App\Http\Livewire\Mahasiswa\Show;
 use Illuminate\Support\Facades\Route;
@@ -22,4 +23,5 @@ Route::get('/', function () {
 
 Route::get('/home', Home::class);
 Route::get('/mahasiswa', Show::class);
+Route::get('/mahasiswa/create', Create::class);
 Route::get('/tentang', Tentang::class);
