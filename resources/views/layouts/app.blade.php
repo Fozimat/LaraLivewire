@@ -8,13 +8,15 @@
     <title>@yield('title')</title>
     <link href=" {{ mix('css/app.css') }}" rel="stylesheet">
     @livewireStyles()
+    @livewireScripts()
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
+        data-turbolinks-eval="false" data-turbo-eval="false"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 </head>
 @include('layouts.navbar')
 
 <body>
     @yield('slot')
-    @livewireScripts()
-    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>
