@@ -17,4 +17,11 @@ class Show extends Component
         $students = Student::latest()->paginate(5);
         return view('livewire.mahasiswa.show', compact(['students']));
     }
+
+    public function destroy($id)
+    {
+        $student = Student::findOrFail($id);
+        $student->delete();
+        return redirect('/mahasiswa')->with('sukses', 'Data berhasil dihapus');
+    }
 }

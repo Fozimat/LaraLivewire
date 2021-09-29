@@ -32,7 +32,7 @@
                 <td>{{ $student->no_hp }}</td>
                 <td>{{ $student->alamat }}</td>
                 <td><a href="{{ route('mahasiswa.edit', $student->id) }}" class="btn btn-success">Edit</a> |
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <button wire:click="destroy({{ $student->id }})" class="btn btn-danger">Delete</button>
                 </td>
             </tr>
             @endforeach
