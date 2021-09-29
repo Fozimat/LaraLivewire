@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Livewire\Home;
+use App\Http\Livewire\Tentang;
+use App\Http\Livewire\Mahasiswa\Show;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', Home::class);
+Route::get('/mahasiswa', Show::class);
+Route::get('/tentang', Tentang::class);
