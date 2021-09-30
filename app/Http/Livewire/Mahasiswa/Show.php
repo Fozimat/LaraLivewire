@@ -11,7 +11,10 @@ class Show extends Component
     use WithPagination;
 
     public $search;
-    protected $queryString = ['search'];
+    protected $queryString = [
+        'search' => ['except' => ''],
+        'page' => ['except' => 1]
+    ];
 
     protected $paginationTheme = 'bootstrap';
 
