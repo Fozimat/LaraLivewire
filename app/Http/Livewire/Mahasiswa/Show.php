@@ -10,11 +10,14 @@ class Show extends Component
 {
     use WithPagination;
 
+    public $search;
+    protected $queryString = ['search'];
+
     protected $paginationTheme = 'bootstrap';
 
     public function render()
     {
-        $students = Student::latest()->paginate(5);
+        $students = $this->search === null ? Student::latest()->paginate(5) : Student::where('nama', 'like', '%' . $this->search . '%')->orWhere('nim', 'like', '%' . $this->search . '%')->latest()->paginate(5);
         return view('livewire.mahasiswa.show', compact(['students']));
     }
 

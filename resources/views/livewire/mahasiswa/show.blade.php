@@ -3,6 +3,8 @@
 <div class="container">
     <h1 class="mt-3 text-center">Halaman mahasiswa</h1>
     <a href="/mahasiswa/create" class="btn btn-primary mb-3">Tambah mahasiswa</a>
+    <input wire:model="search" type="search" class="form-control mb-3"
+        placeholder="Cari mahasiswa berdasarkan nama atau NIM...">
     @if(session('sukses'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{ session('sukses') }}</strong>
